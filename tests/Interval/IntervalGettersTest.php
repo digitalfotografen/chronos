@@ -43,17 +43,17 @@ class IntervalGettersTest extends TestCase
         $this->assertSame(6, $d->weeks);
     }
 
-    public function testDayzExcludingWeeksGetter()
+    public function testDaysExcludingWeeksGetter()
     {
         $d = ChronosInterval::create(4, 5, 6, 5, 8, 9, 10);
         $this->assertSame(5, $d->daysExcludeWeeks);
-        $this->assertSame(5, $d->dayzExcludeWeeks);
+        $this->assertSame(5, $d->daysExcludeWeeks);
     }
 
-    public function testDayzGetter()
+    public function testDaysGetter()
     {
         $d = ChronosInterval::create(4, 5, 6, 5, 8, 9, 10);
-        $this->assertSame(6 * 7 + 5, $d->dayz);
+        $this->assertSame(6 * 7 + 5, $d->days);
     }
 
     public function testHoursGetter()

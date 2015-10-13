@@ -23,13 +23,12 @@ use InvalidArgumentException;
  * @property int $years Total years of the current interval.
  * @property int $months Total months of the current interval.
  * @property int $weeks Total weeks of the current interval calculated from the days.
- * @property int $dayz Total days of the current interval (weeks * 7 + days).
+ * @property int $days Total days of the current interval (weeks * 7 + days).
  * @property int $hours Total hours of the current interval.
  * @property int $minutes Total minutes of the current interval.
  * @property int $seconds Total seconds of the current interval.
  *
- * @property-read int $dayzExcludeWeeks Total days remaining in the final week of the current instance (days % 7).
- * @property-read int $daysExcludeWeeks alias of dayzExcludeWeeks
+ * @property-read int $daysExcludeWeeks Total days remaining in the final week of the current instance (days % 7).
  *
  * @method static ChronosInterval years($years = 1) Create instance specifying a number of years.
  * @method static ChronosInterval year($years = 1) Alias for years()
@@ -38,7 +37,6 @@ use InvalidArgumentException;
  * @method static ChronosInterval weeks($weeks = 1) Create instance specifying a number of weeks.
  * @method static ChronosInterval week($weeks = 1) Alias for weeks()
  * @method static ChronosInterval days($days = 1) Create instance specifying a number of days.
- * @method static ChronosInterval dayz($days = 1) Alias for days()
  * @method static ChronosInterval day($days = 1) Alias for days()
  * @method static ChronosInterval hours($hours = 1) Create instance specifying a number of hours.
  * @method static ChronosInterval hour($hours = 1) Alias for hours()
@@ -51,10 +49,9 @@ use InvalidArgumentException;
  * @method ChronosInterval year() year($years = 1) Alias for years().
  * @method ChronosInterval months() months($months = 1) Set the months portion of the current interval.
  * @method ChronosInterval month() month($months = 1) Alias for months().
- * @method ChronosInterval weeks() weeks($weeks = 1) Set the weeks portion of the current interval.  Will overwrite dayz value.
+ * @method ChronosInterval weeks() weeks($weeks = 1) Set the weeks portion of the current interval.  Will overwrite days value.
  * @method ChronosInterval week() week($weeks = 1) Alias for weeks().
  * @method ChronosInterval days() days($days = 1) Set the days portion of the current interval.
- * @method ChronosInterval dayz() dayz($days = 1) Alias for days().
  * @method ChronosInterval day() day($days = 1) Alias for days().
  * @method ChronosInterval hours() hours($hours = 1) Set the hours portion of the current interval.
  * @method ChronosInterval hour() hour($hours = 1) Alias for hours().
@@ -182,7 +179,6 @@ class ChronosInterval extends DateInterval
                 return new static(null, null, $arg);
 
             case 'days':
-            case 'dayz':
             case 'day':
                 return new static(null, null, null, $arg);
 
@@ -239,7 +235,7 @@ class ChronosInterval extends DateInterval
             case 'months':
                 return $this->m;
 
-            case 'dayz':
+            case 'days':
                 return $this->d;
 
             case 'hours':
@@ -255,7 +251,6 @@ class ChronosInterval extends DateInterval
                 return (int)floor($this->d / ChronosInterface::DAYS_PER_WEEK);
 
             case 'daysExcludeWeeks':
-            case 'dayzExcludeWeeks':
                 return $this->d % ChronosInterface::DAYS_PER_WEEK;
 
             default:
@@ -286,7 +281,7 @@ class ChronosInterval extends DateInterval
                 $this->d = $val * ChronosInterface::DAYS_PER_WEEK;
                 break;
 
-            case 'dayz':
+            case 'days':
                 $this->d = $val;
                 break;
 
@@ -313,7 +308,7 @@ class ChronosInterval extends DateInterval
      */
     public function weeksAndDays($weeks, $days)
     {
-        $this->dayz = ($weeks * ChronosInterface::DAYS_PER_WEEK) + $days;
+        $this->days = ($weeks * ChronosInterface::DAYS_PER_WEEK) + $days;
         return $this;
     }
 
@@ -345,13 +340,12 @@ class ChronosInterval extends DateInterval
 
             case 'weeks':
             case 'week':
-                $this->dayz = $arg * ChronosInterface::DAYS_PER_WEEK;
+                $this->days = $arg * ChronosInterface::DAYS_PER_WEEK;
                 break;
 
             case 'days':
-            case 'dayz':
             case 'day':
-                $this->dayz = $arg;
+                $this->days = $arg;
                 break;
 
             case 'hours':
@@ -384,11 +378,11 @@ class ChronosInterval extends DateInterval
         $sign = ($interval->invert === 1) ? -1 : 1;
 
         if (static::wasCreatedFromDiff($interval)) {
-            $this->dayz = $this->dayz + ($interval->days * $sign);
+            $this->days = $this->days + ($interval->days * $sign);
         } else {
             $this->years = $this->years + ($interval->y * $sign);
             $this->months = $this->months + ($interval->m * $sign);
-            $this->dayz = $this->dayz + ($interval->d * $sign);
+            $this->days = $this->days + ($interval->d * $sign);
             $this->hours = $this->hours + ($interval->h * $sign);
             $this->minutes = $this->minutes + ($interval->i * $sign);
             $this->seconds = $this->seconds + ($interval->s * $sign);

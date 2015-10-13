@@ -69,7 +69,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         }
 
         if ($days !== null) {
-            $this->assertSame($days, $ci->dayz, 'ChronosInterval->dayz');
+            $this->assertSame($days, $ci->days, 'ChronosInterval->days');
         }
 
         if ($hours !== null) {

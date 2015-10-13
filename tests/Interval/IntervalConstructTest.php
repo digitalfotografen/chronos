@@ -113,10 +113,6 @@ class IntervalConstructTest extends TestCase
         $this->assertInstanceOf(ChronosInterval::class, $ci);
         $this->assertDateTimeInterval($ci, 0, 0, 2, 0, 0, 0);
 
-        $ci = ChronosInterval::dayz(2);
-        $this->assertInstanceOf(ChronosInterval::class, $ci);
-        $this->assertDateTimeInterval($ci, 0, 0, 2, 0, 0, 0);
-
         $ci = ChronosInterval::day();
         $this->assertInstanceOf(ChronosInterval::class, $ci);
         $this->assertDateTimeInterval($ci, 0, 0, 1, 0, 0, 0);

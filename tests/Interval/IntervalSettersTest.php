@@ -38,16 +38,16 @@ class IntervalSettersTest extends TestCase
         $d = ChronosInterval::create(4, 5, 6, 5, 8, 9, 10);
         $d->weeks = 11;
         $this->assertSame(11, $d->weeks);
-        $this->assertSame(7 * 11, $d->dayz);
+        $this->assertSame(7 * 11, $d->days);
     }
 
-    public function testDayzSetter()
+    public function testDaysSetter()
     {
         $d = ChronosInterval::create(4, 5, 6, 5, 8, 9, 10);
-        $d->dayz = 11;
-        $this->assertSame(11, $d->dayz);
+        $d->days = 11;
+        $this->assertSame(11, $d->days);
         $this->assertSame(1, $d->weeks);
-        $this->assertSame(4, $d->dayzExcludeWeeks);
+        $this->assertSame(4, $d->daysExcludeWeeks);
     }
 
     public function testHoursSetter()
@@ -73,7 +73,7 @@ class IntervalSettersTest extends TestCase
 
     public function testFluentSetters()
     {
-        $ci = ChronosInterval::years(4)->months(2)->dayz(5)->hours(3)->minute()->seconds(59);
+        $ci = ChronosInterval::years(4)->months(2)->days(5)->hours(3)->minute()->seconds(59);
         $this->assertInstanceOf(ChronosInterval::class, $ci);
         $this->assertDateTimeInterval($ci, 4, 2, 5, 3, 1, 59);
 
@@ -98,8 +98,8 @@ class IntervalSettersTest extends TestCase
     {
         $ci = ChronosInterval::year(5)->weeksAndDays(2, 6);
         $this->assertDateTimeInterval($ci, 5, 0, 20, 0, 0, 0);
-        $this->assertSame(20, $ci->dayz);
+        $this->assertSame(20, $ci->days);
         $this->assertSame(2, $ci->weeks);
-        $this->assertSame(6, $ci->dayzExcludeWeeks);
+        $this->assertSame(6, $ci->daysExcludeWeeks);
     }
 }
