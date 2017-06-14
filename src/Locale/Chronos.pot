@@ -1,0 +1,84 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-06-14 10:50+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Translator.php:26
+msgid "years"
+msgstr ""
+
+#: Translator.php:27
+msgid "1 month"
+msgstr ""
+
+#: Translator.php:28
+msgid "months"
+msgstr ""
+
+#: Translator.php:29
+msgid "1 week"
+msgstr ""
+
+#: Translator.php:30
+msgid "weeks"
+msgstr ""
+
+#: Translator.php:31
+msgid "1 day"
+msgstr ""
+
+#: Translator.php:32
+msgid "days"
+msgstr ""
+
+#: Translator.php:33
+msgid "1 hour"
+msgstr ""
+
+#: Translator.php:34
+msgid "hours"
+msgstr ""
+
+#: Translator.php:35
+msgid "1 minute"
+msgstr ""
+
+#: Translator.php:36
+msgid "minutes"
+msgstr ""
+
+#: Translator.php:37
+msgid "1 second"
+msgstr ""
+
+#: Translator.php:38
+msgid "seconds"
+msgstr ""
+
+#: Translator.php:39
+msgid "ago"
+msgstr ""
+
+#: Translator.php:40
+msgid "from now"
+msgstr ""
+
+#: Translator.php:41
+msgid "after"
+msgstr ""
+
+#: Translator.php:42
+msgid "before"
+msgstr ""
+

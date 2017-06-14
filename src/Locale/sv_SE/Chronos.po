@@ -1,0 +1,85 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CapePHP/Chronos\n"
+"POT-Creation-Date: 2017-06-14 12:50+0200\n"
+"PO-Revision-Date: 2017-06-14 12:50+0200\n"
+"Last-Translator: Ulrik Södergren <ulrik@digitalfotografen.se>\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: Translator.php:26
+msgid "years"
+msgstr "år"
+
+#: Translator.php:27
+msgid "1 month"
+msgstr "1 månad"
+
+#: Translator.php:28
+msgid "months"
+msgstr "månader"
+
+#: Translator.php:29
+msgid "1 week"
+msgstr "1 vecka"
+
+#: Translator.php:30
+msgid "weeks"
+msgstr "veckor"
+
+#: Translator.php:31
+msgid "1 day"
+msgstr "1 dag"
+
+#: Translator.php:32
+msgid "days"
+msgstr "dagar"
+
+#: Translator.php:33
+msgid "1 hour"
+msgstr "1 timme"
+
+#: Translator.php:34
+msgid "hours"
+msgstr "timmar"
+
+#: Translator.php:35
+msgid "1 minute"
+msgstr "1 minut"
+
+#: Translator.php:36
+msgid "minutes"
+msgstr "minuter"
+
+#: Translator.php:37
+msgid "1 second"
+msgstr "1 sekund"
+
+#: Translator.php:38
+msgid "seconds"
+msgstr "sekunder"
+
+#: Translator.php:39
+msgid "ago"
+msgstr "sedan"
+
+#: Translator.php:40
+msgid "from now"
+msgstr "från nu"
+
+#: Translator.php:41
+msgid "after"
+msgstr "efter"
+
+#: Translator.php:42
+msgid "before"
+msgstr "före"
